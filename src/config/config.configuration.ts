@@ -5,6 +5,7 @@ export default ()=>{
     database:process.env['DATABASE'],
     username:process.env['USERNAME'],
     password:process.env['PASSWORD'],
-    host:process.env['HOST']
+    host:process.env['HOST'],
+    entitiesDir:process.env['ENTITIESDIR']
   }
 }
