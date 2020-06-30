@@ -19,7 +19,8 @@ import {getKey} from './config/config.service'
       database:getKey('database'),
       username:'root',//getKey('user'),
       password:getKey('password'),
-      entities:[getKey('entitiesDir')],
+     // entities:[getKey('entitiesDir')],
+        entities:['db/entities/**/*.entity.ts'],
       host:getKey('host'),
       synchronize:true
     /*  type:'mysql',
