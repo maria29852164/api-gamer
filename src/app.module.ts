@@ -7,6 +7,7 @@ import configuration from './config/config.configuration'
 import {TypeOrmModule} from '@nestjs/typeorm'
 import {ConfigService} from '@nestjs/config'
 import {getKey} from './config/config.service'
+import {Connection} from 'typeorm'
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -20,7 +21,7 @@ import {getKey} from './config/config.service'
       username:'root',//getKey('user'),
       password:getKey('password'),
      // entities:[getKey('entitiesDir')],
-        entities:['db/entities/**/*.entity.ts'],
+      entities:['db/entities/**/*.entity.ts'],
       host:getKey('host'),
       synchronize:true
     /*  type:'mysql',
@@ -41,5 +42,5 @@ import {getKey} from './config/config.service'
   providers: [AppService],
 })
 export class AppModule {
-  constructor(private readonly configService:ConfigService){}
+  constructor(private readonly connection:Connection){}
 }
