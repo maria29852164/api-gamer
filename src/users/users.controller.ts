@@ -1,11 +1,15 @@
-import { Controller ,Get} from '@nestjs/common';
-import {ConfigService} from '@nestjs/config'
-import {getKey} from '../config/config.service'
+import { Controller ,Get,Body,Param} from '@nestjs/common';
+
+import {UsersService} from './users.service'
+import {UserDto} from '../DTO/user.dto'
 
 @Controller('users')
 export class UsersController {
-  constructor(){
-
+  constructor(private readonly userService:UsersService){
+  }
+  @Post('create')
+  createUser(@Body() user:UserDto){
+     return this.userService.saveUser(user)
   }
   @Get()
   getUser(){

@@ -22,6 +22,7 @@ export class UsersService {
         await this.UserRepository.delete(id)
     }
     async findUser(id:number):Promise<UserModel>{
+        console.log('saving User')
        return  await this.UserRepository.findOne(id)
     }
 
