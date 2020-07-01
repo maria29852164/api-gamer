@@ -4,7 +4,7 @@ import {User} from './user.entity'
 export class Comments extends BaseEntity{
     @PrimaryGeneratedColumn('increment')
     id_comments:number;
-    @Column({type:"varchar",length:200})
+    @Column({type:"varchar",length:255})
     comments_content:string;
     @Column()
     like:boolean;
