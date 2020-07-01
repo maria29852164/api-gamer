@@ -1,6 +1,6 @@
-import { PrimaryGeneratedColumn ,Column,ManyToOne} from "typeorm";
-import {Game} from 'game.entity'
-import { Entity,BaseEntity,Column,PrimaryGeneratedColumn} from 'typeorm'
+
+import {Game} from './game.entity'
+import { Entity,BaseEntity,Column,PrimaryGeneratedColumn,ManyToOne} from 'typeorm'
 @Entity('opinion')
 export class Opinion extends BaseEntity{
     @PrimaryGeneratedColumn('increment')
@@ -11,7 +11,7 @@ export class Opinion extends BaseEntity{
     punctuation:number;
     @Column({type:"varchar",length:255,nullable:true})
     video_opinion:string;
-    @ManyToOne(type=>Game,game=>game.opinion)
-    game:Game
+    @ManyToOne(type=>Game,game=>game.opinions)
+    game:Game;
 
 }

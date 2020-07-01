@@ -1,5 +1,6 @@
 import {Entity,BaseEntity,Column,PrimaryGeneratedColumn,OneToMany} from 'typeorm'
 import {Opinion} from './opinion.entity'
+import {Categories} from "./categories.entity";
 @Entity('game')
 export class Game extends BaseEntity{
     @PrimaryGeneratedColumn('increment')
@@ -9,5 +10,7 @@ export class Game extends BaseEntity{
     @Column({type:'int',nullable:true})
     views:number;
     @OneToMany(type=>Opinion,opinion=>opinion.game)
-    opinion:Opinion[]
+    opinions:Opinion[];
+    @OneToMany(type=>Categories,categories=>categories.game)
+    categories:Categories[]
 }
