@@ -7,7 +7,7 @@ import {User} from '../db/entities/user.entity'
 //import {Connection} from 'typeorm'
 
 @Module({
-  imports:[TypeOrmModule.forFeature([UserRepository])],
+  imports:[TypeOrmModule.forFeature([User])],
   controllers: [UsersController],
   providers: [UsersService]
 })

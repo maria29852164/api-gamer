@@ -11,7 +11,7 @@
       "migrationsDir":"src/db/migrations"
    },
    "entities": [
-     "src/**/**/*.entity.ts"
+     "dist/db/entities/*.entity{.ts,.js}"
    ],
    "migrations": [
      "src/db/migrations/*{.js,.ts}"

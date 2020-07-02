@@ -23,7 +23,7 @@ import {User} from './db/entities/user.entity'
       username:'root',//getKey('user'),
       password:getKey('password'),
      // entities:[getKey('entitiesDir')],
-      entities:[__dirname+'/db/entity/*.entity{.ts,.js}'],
+      entities:[__dirname+ '/../dist/**/*.entity{.ts,.js}'],
       host:getKey('host'),
       //autoLoadEntities:true,
       synchronize:true
