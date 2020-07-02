@@ -8,7 +8,9 @@ import {TypeOrmModule} from '@nestjs/typeorm'
 import {ConfigService} from '@nestjs/config'
 import {getKey} from './config/config.service'
 import {Connection} from 'typeorm'
+import {User} from './db/entities/user.entity'
 @Module({
+
   imports: [
     ConfigModule.forRoot({
       load:[configuration],
@@ -21,21 +23,11 @@ import {Connection} from 'typeorm'
       username:'root',//getKey('user'),
       password:getKey('password'),
      // entities:[getKey('entitiesDir')],
-      entities:[__dirname+'/src/**/**/*.entity.ts'],
+      entities:[__dirname+'/db/entity/*.entity{.ts,.js}'],
       host:getKey('host'),
+      //autoLoadEntities:true,
       synchronize:true
-    /*  type:'mysql',
-      port:3306,
-      database:'gamer',
-      username:'root',
-      password:'123456',
-      entities:[],
-      host:'localhost',
-      synchronize:true*/
-
     }),
-
-
     UsersModule
   ],
   controllers: [AppController],

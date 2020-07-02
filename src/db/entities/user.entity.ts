@@ -1,5 +1,5 @@
 import {Entity,PrimaryGeneratedColumn,Column,BaseEntity,OneToMany,ManyToMany,JoinTable} from 'typeorm'
-import { UsersController } from '../../users/users.controller';
+
 import {Opinion} from './opinion.entity'
 import {Comments} from './comentarios.entity'
 export enum UserRole{

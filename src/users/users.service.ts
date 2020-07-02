@@ -4,6 +4,7 @@ import {InjectRepository} from '@nestjs/typeorm'
 import {UserModel} from '../db/models/user.interface'
 import {Repository} from "typeorm";
 import {UserRepository} from '../db/repositories/user.repository'
+import {User} from '../db/entities/user.entity'
 @Injectable()
 export class UsersService {
     constructor(@InjectRepository(UserRepository) private readonly userRepository:UserRepository) {
