@@ -13,9 +13,12 @@ export class User extends BaseEntity{
     id_user:number;
     @Column({type:"varchar",length:100})
     name_user:string;
+    @Column({type:"varchar",nullable:false,length:200})
+    mail_user:string;
     @Column({type:'enum',enum:UserRole,default:UserRole.NORMAL})
     role:UserRole;
     @Column('timestamp')
+    
     dateCreate:Date;
     @OneToMany(type=>Comments,comment=>comment.user)
     comments:Comments[];

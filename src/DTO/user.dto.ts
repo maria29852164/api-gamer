@@ -6,12 +6,14 @@ import {IsEmpty,IsNotEmpty,} from 'class-validator'
 export class UserDto{
     @IsNotEmpty()
    public id_user:number;
-
+    @IsNotEmpty()
     public name_user:string;
+    @IsNotEmpty()
+    mail_user:string
 
     public role:UserRole;
-
-   public dateCreate:Date;
+     @IsNotEmpty()
+     public dateCreate:Date;
     @IsEmpty()
     public comments:CommentDto[];
     @IsEmpty()
